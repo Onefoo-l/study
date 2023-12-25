@@ -32,6 +32,7 @@
         <jxb.version>2.3.1</jxb.version>
         <redis.version>3.1.5</redis.version>
         <fastjson2.version>2.0.39</fastjson2.version>
+        <knife4j_spring.version>3.0.3</knife4j_spring.version>
     </properties>
 
     <dependencyManagement>
@@ -78,6 +79,11 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j_spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springdoc</groupId>
