@@ -54,6 +54,8 @@
 import { ref } from 'vue'
 //导入login方法
 import {login} from '@/api/auth/index.js'
+//引入token
+import { setToken } from '@/utils/utils/index.js'
 //声明表单绑定值
 const loginForm = ref({
     account: undefined,
@@ -62,14 +64,14 @@ const loginForm = ref({
 })
 
 //声明方法
-function handleLogin(){
+function handleLogin(){ 
     //调用login方法
     login(loginForm.value).then((res) => {
         console.log("登录====>",res);
         //判断是否成功
         if(res.data.code == 20000){
             //将token存储到redis中
-            console.log("登录成功!");
+            setToken("onefoolToken",res.data.token);
         }
     })
 };

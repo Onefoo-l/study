@@ -25,6 +25,8 @@ public class LoginUserVo implements UserDetails {
 
     private Long id;
 
+    private Long time;
+
     private String token;
     //用户信息
     private UmsSysUser umsSysUser;

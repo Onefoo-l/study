@@ -29,6 +29,9 @@ public class LoginDtoServiceImpl implements LoginDtoService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private JwtUtil jwtUtil;
+
     @Override
     public Result<String> login(LoginDto loginDto) {
         LOGGER.info("进入LoginDtoServiceImpl方法====>");
@@ -39,7 +42,7 @@ public class LoginDtoServiceImpl implements LoginDtoService {
         var loginUserVo = (LoginUserVo) authenticate.getPrincipal();
         //根据loginUser创建token
         if (ObjectUtil.isNull(loginUserVo)) throw new CustomizeException(StatusCode.UNAUTHORIZED.code(),"认证失败!!");
-        String token = JwtUtil.createToken(loginUserVo);
+        String token = jwtUtil.createToken(loginUserVo);
         LOGGER.info("token=====>{}",token);
         return Result.ok(token);
 

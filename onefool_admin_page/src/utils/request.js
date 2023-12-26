@@ -2,6 +2,7 @@
 //导入axios
 import axios from 'axios';
 import router from '@/router/index.js'
+import {getToken} from '@/utils/utils/index.js'
 let token = "";
 //创建axios
 const request = axios.create({
@@ -18,8 +19,8 @@ axios.defaults.headers['Content-Type'] = 'application/json?chatset=utf-8'
 request.interceptors.request.use((config) => {
 
     //在请求头添加token，判断是否需要发送token
-    if (token) {
-         config.headers['Onefool.Authorization'] = token;      
+    if (getToken("onefoolToken")) {
+         config.headers['Onefool.Authorization'] = getToken("onefoolToken");      
     }
     return config;
 },(error) => {

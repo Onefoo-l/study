@@ -1,6 +1,7 @@
 package com.onefool.support.config.security;
 
 import com.onefool.common.service.impl.LoginUserVoDetails;
+import com.onefool.support.config.filter.JwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +15,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -27,36 +29,46 @@ import java.util.Collections;
  */
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig  {
+public class SecurityConfig {
 
     @Autowired
     private LoginUserVoDetails loginUserVoDetails;
 
+    @Autowired
+    private JwtFilter jwtFilter;
     /**
      * 配置过滤器链
+     *
      * @param http
      * @return
      * @throws Exception
      */
     @Bean
     public SecurityFilterChain chain(HttpSecurity http) throws Exception {
-            http
-                    .csrf(AbstractHttpConfigurer::disable)
-                    .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                    .authorizeHttpRequests(req -> req
-                            .requestMatchers("/**").permitAll()
-                            .anyRequest().authenticated())
-                    .formLogin(Customizer.withDefaults());
+        http
+                //关闭csrf
+                .csrf(AbstractHttpConfigurer::disable)
+                //配置权限
+                .authorizeHttpRequests(req -> req
+                        .requestMatchers("/**").permitAll()
+                        .anyRequest().authenticated())
+                //配置登录,默认登录
+                .formLogin(Customizer.withDefaults())
+                //配置跨域
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                //添加jwt过滤器,在UsernamePasswordAuthenticationFilter之前
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
-            return http.build();
+        return http.build();
     }
 
     /**
      * 配置认证管理器
+     *
      * @return
      */
     @Bean
-    public AuthenticationManager authenticationManager(){
+    public AuthenticationManager authenticationManager() {
         var pro = new DaoAuthenticationProvider();
         pro.setUserDetailsService(loginUserVoDetails);
         pro.setPasswordEncoder(passwordEncoder());
@@ -65,18 +77,20 @@ public class SecurityConfig  {
 
     /**
      * 配置密码加密器
+     *
      * @return
      */
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     /**
      * 配置跨域，允许所有请求
+     *
      * @return
      */
-    public CorsConfigurationSource corsConfigurationSource(){
+    public CorsConfigurationSource corsConfigurationSource() {
         var corsConfig = new CorsConfiguration();
         //配置方法
         corsConfig.setAllowedMethods(Collections.singletonList("*"));
@@ -87,7 +101,7 @@ public class SecurityConfig  {
 
         //创建 CorsConfigurationSource 对象
         var source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**",corsConfig);
+        source.registerCorsConfiguration("/**", corsConfig);
         return source;
     }
 }
