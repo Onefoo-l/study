@@ -1,11 +1,12 @@
-package com.onefool.auth.domain.entry;
+package com.onefool.common.domain.entry;
 
 import com.baomidou.mybatisplus.annotation.*;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
-import lombok.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 后台用户表
@@ -98,5 +99,9 @@ public class UmsSysUser implements Serializable {
     @TableLogic
     private Integer deleted;
 
+    @TableField(exist = false)
+    private List<UmsRole> roleList = new ArrayList<>();
 
+    @TableField(exist = false)
+    private List<String> menuList = new ArrayList<>();
 }

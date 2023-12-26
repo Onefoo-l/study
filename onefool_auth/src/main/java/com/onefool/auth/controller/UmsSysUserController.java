@@ -1,10 +1,11 @@
 package com.onefool.auth.controller;
 
-import com.onefool.auth.domain.entry.UmsSysUser;
-import com.onefool.auth.service.UmsSysUserService;
+
+import com.onefool.common.domain.entry.UmsSysUser;
 import com.onefool.common.pojo.PageInfo;
 import com.onefool.common.pojo.PageRequestDto;
 import com.onefool.common.pojo.Result;
+import com.onefool.common.service.UmsSysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

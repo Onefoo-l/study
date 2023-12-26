@@ -4,24 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8745ca49-5763-41d2-8809-2b710a62fc4e" name="Changes" comment="初始化模块">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/controller/UmsSysUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/constans/MyBatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/exception/CustomizeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/pojo/PageInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/pojo/PageRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/pojo/StatusCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8745ca49-5763-41d2-8809-2b710a62fc4e" name="Changes" comment="编写前端登录代码，配置security,mybatisPlus模块">
+      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/vo/LoginUserVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/mapper/UmsMenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/LoginDtoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/LoginDtoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/LoginUserVoDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/utils/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/resources/mapper/UmsSysUserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/filter/JwtFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onefool_common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_admin_page/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_admin_page/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_admin_page/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_admin_page/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/controller/UmsSysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/controller/UmsSysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/domain/dto/LoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/dto/LoginDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/domain/entry/UmsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/entry/UmsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/domain/entry/UmsRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/entry/UmsRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/domain/entry/UmsSysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/entry/UmsSysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/mapper/UmsMenuMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/mapper/UmsRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/mapper/UmsRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/mapper/UmsSysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/mapper/UmsSysUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/service/UmsMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/UmsMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/service/UmsRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/UmsRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/service/UmsSysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/UmsSysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/service/impl/UmsMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/UmsMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/service/impl/UmsRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/UmsRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/java/com/onefool/auth/service/impl/UmsSysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/UmsSysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/resources/mapper/UmsMenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/resources/mapper/UmsMenuMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/resources/mapper/UmsRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/resources/mapper/UmsRoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_auth/src/main/resources/mapper/UmsSysUserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/exception/CustomizeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/exception/CustomizeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onefool_stater/src/main/java/com/onefool/SpringStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_stater/src/main/java/com/onefool/SpringStart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onefool_stater/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_stater/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +46,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -59,7 +75,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2Zy062gDbRlDiUmEFCe23Uw1OAk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -76,7 +94,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "dev",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/myproject/onefool_study/onefool_study/onefool_common/src/main/java/com/onefool/common",
+    "last_opened_file_path": "D:/myproject/onefool_study/onefool_study/onefool_common/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -100,8 +118,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myproject\onefool_study\onefool_study\onefool_common\src\main\resources" />
       <recent name="D:\myproject\onefool_study\onefool_study\onefool_common\src\main\java\com\onefool\common" />
+      <recent name="D:\myproject\onefool_study\onefool_study\onefool_support\src\main\resources" />
+      <recent name="D:\myproject\onefool_study\onefool_study\onefool_support\src\main\java\com\onefool\support\config" />
       <recent name="D:\myproject\onefool_study\onefool_study\onefool_common\src\main\java\com\onefool\common\constans" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myproject\onefool_study\onefool_study\onefool_support\src\main\resources\com\onefool\support\config" />
     </key>
   </component>
   <component name="RunManager">
@@ -148,7 +172,7 @@
       <workItem from="1703378837119" duration="2211000" />
       <workItem from="1703381064609" duration="78000" />
       <workItem from="1703381171628" duration="1816000" />
-      <workItem from="1703383030866" duration="14414000" />
+      <workItem from="1703383030866" duration="32674000" />
     </task>
     <task id="LOCAL-00001" summary="初始化模块">
       <option name="closed" value="true" />
@@ -158,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703384632563</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="编写前端登录代码，配置security,mybatisPlus模块">
+      <option name="closed" value="true" />
+      <created>1703531823650</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703531823650</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +209,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化模块" />
+    <MESSAGE value="编写前端登录代码，配置security,mybatisPlus模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="编写前端登录代码，配置security,mybatisPlus模块" />
   </component>
 </project>

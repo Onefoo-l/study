@@ -1,7 +1,8 @@
-package com.onefool.auth.service;
+package com.onefool.common.service;
 
-import com.onefool.auth.domain.entry.UmsMenu;
+
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.onefool.common.domain.entry.UmsMenu;
 
 /**
 * @author Onefool

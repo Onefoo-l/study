@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.onefool.common.mapper.UmsSysUserMapper">
+
+    <resultMap id="UserResultMap" type="com.onefool.common.domain.entry.UmsSysUser">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="nickname" column="nickname" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="INTEGER"/>
+        <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="creator" column="creator" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updater" column="updater" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="deleted" column="deleted" jdbcType="TINYINT"/>
+        <collection property="roleList" javaType="list" resultMap="RoleResultMap"/>
+    </resultMap>
+    <resultMap id="RoleResultMap" type="com.onefool.common.domain.entry.UmsRole">
+        <id property="roleId" column="role_id" jdbcType="BIGINT"/>
+        <result property="roleLabel" column="role_label" jdbcType="VARCHAR"/>
+        <result property="roleName" column="role_name" jdbcType="VARCHAR"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="creator" column="creator" jdbcType="VARCHAR"/>
+        <result property="updater" column="updater" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,username,nickname,
+        email,mobile,sex,
+        avatar,password,status,
+        creator,create_time,updater,
+        update_time,remark,deleted
+    </sql>
+
+    <select id="selectSysUserAndRole" resultMap="UserResultMap">
+        select usu.*,ur.*
+        from ums_sys_user usu
+        left join ums_sys_user_role usur on usu.id = usur.user_id
+        left join ums_role ur on usur.role_id = ur.role_id
+        <where>usu.deleted = 0 and ur.deleted = 0 and
+            <if test="accountType == 0">
+                usu.username = #{account}
+            </if>
+            <if test="accountType == 1">
+                usu.mobile = #{account}
+            </if>
+            <if test="accountType == 2">
+                usu.email = #{account}
+            </if>
+        </where>
+
+    </select>
+</mapper>

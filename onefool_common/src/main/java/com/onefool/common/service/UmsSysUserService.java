@@ -1,10 +1,13 @@
-package com.onefool.auth.service;
+package com.onefool.common.service;
+
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.onefool.auth.domain.entry.UmsSysUser;
+import com.onefool.common.domain.entry.UmsSysUser;
+
 import com.onefool.common.pojo.PageInfo;
 import com.onefool.common.pojo.PageRequestDto;
 import com.onefool.common.pojo.Result;
+
 
 /**
 * @author Onefool

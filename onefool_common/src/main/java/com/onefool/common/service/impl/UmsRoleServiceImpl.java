@@ -1,9 +1,11 @@
-package com.onefool.auth.service.impl;
+package com.onefool.common.service.impl;
+
+
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.onefool.auth.domain.entry.UmsRole;
-import com.onefool.auth.service.UmsRoleService;
-import com.onefool.auth.mapper.UmsRoleMapper;
+import com.onefool.common.domain.entry.UmsRole;
+import com.onefool.common.mapper.UmsRoleMapper;
+import com.onefool.common.service.UmsRoleService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,7 +15,7 @@ import org.springframework.stereotype.Service;
 */
 @Service
 public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole>
-    implements UmsRoleService{
+    implements UmsRoleService {
 
 }
 

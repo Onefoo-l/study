@@ -6,7 +6,7 @@ let token = "";
 //创建axios
 const request = axios.create({
     //根请求地址
-    baseUrl:'http://localhost',
+    baseURL:'http://localhost',
     withCredentials: false, //用于配置请求接口跨域时是否需要凭证
     timeout: 30000 //超时时间。单位毫秒
 
@@ -47,7 +47,7 @@ request.interceptors.response.use((response) => {
         window.sessionStorage.clear();
         router.push('/login');
     }
-    return Promise.reject(msg);
+    return Promise.reject(message);
 },(error) => {
     //出现异常
     ElMessage.error('error=====>',error);

@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date 2023/12/24 9:06
  */
 @SpringBootApplication
-@MapperScan("com.onefool.*.mapper")
+@MapperScan("com.onefool.*.*.mapper")
 public class SpringStart {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SpringStart.class);

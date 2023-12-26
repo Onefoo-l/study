@@ -1,14 +1,17 @@
-package com.onefool.auth.service.impl;
+package com.onefool.common.service.impl;
+
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.onefool.auth.domain.entry.UmsSysUser;
-import com.onefool.auth.mapper.UmsSysUserMapper;
-import com.onefool.auth.service.UmsSysUserService;
+import com.onefool.common.domain.entry.UmsSysUser;
+import com.onefool.common.mapper.UmsSysUserMapper;
+
 import com.onefool.common.pojo.PageInfo;
 import com.onefool.common.pojo.PageRequestDto;
 import com.onefool.common.pojo.Result;
+
+import com.onefool.common.service.UmsSysUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 

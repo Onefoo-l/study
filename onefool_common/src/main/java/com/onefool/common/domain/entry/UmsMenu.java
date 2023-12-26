@@ -1,12 +1,10 @@
-package com.onefool.auth.domain.entry;
+package com.onefool.common.domain.entry;
 
 import com.baomidou.mybatisplus.annotation.*;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
-
-import lombok.*;
 
 /**
  * 

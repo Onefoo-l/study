@@ -1,7 +1,12 @@
-package com.onefool.auth.mapper;
+package com.onefool.common.mapper;
 
-import com.onefool.auth.domain.entry.UmsMenu;
+
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.onefool.common.domain.entry.UmsMenu;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
 * @author Onefool
@@ -11,6 +16,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 public interface UmsMenuMapper extends BaseMapper<UmsMenu> {
 
+    List<UmsMenu> selectRoleAndMenu(@Param("collects") List<Long> collects);
 }
 
 

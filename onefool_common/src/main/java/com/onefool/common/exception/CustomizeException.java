@@ -8,7 +8,7 @@ import com.onefool.common.pojo.StatusCode;
  * version 1.0.0
  * 自定义异常类 用于业务上的自定义异常
  */
-public class CustomizeException extends Exception{
+public class CustomizeException extends RuntimeException{
 
     //错误的状态码
     private Integer code;

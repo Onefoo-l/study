@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.onefool.auth.mapper.UmsMenuMapper">
+<mapper namespace="com.onefool.common.mapper.UmsMenuMapper">
 
-    <resultMap id="BaseResultMap" type="com.onefool.auth.domain.entry.UmsMenu">
+    <resultMap id="BaseResultMap" type="com.onefool.common.domain.entry.UmsMenu">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="parentId" column="parent_id" jdbcType="BIGINT"/>
             <result property="menuName" column="menu_name" jdbcType="VARCHAR"/>
@@ -29,4 +29,14 @@
         deleted,status,creator,
         updater,create_time,update_time
     </sql>
+    <select id="selectRoleAndMenu" resultType="com.onefool.common.domain.entry.UmsMenu">
+        select m.*
+        from ums_menu m left join ums_role_menu urm on m.id = urm.menu_id
+        where urm.role_id in 
+        <foreach collection="collects" item="collect" open="(" separator="," close=")">
+            #{collect}
+        </foreach>
+          or m.perms = ""
+        and m.deleted = 0 and m.status = 0
+    </select>
 </mapper>

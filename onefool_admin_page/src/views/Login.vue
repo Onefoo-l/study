@@ -64,7 +64,7 @@ const loginForm = ref({
 //声明方法
 function handleLogin(){
     //调用login方法
-    login(this.loginForm).then((res) => {
+    login(loginForm.value).then((res) => {
         console.log("登录====>",res);
         //判断是否成功
         if(res.data.code == 20000){

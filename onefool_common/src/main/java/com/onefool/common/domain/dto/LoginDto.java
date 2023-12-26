@@ -1,4 +1,4 @@
-package com.onefool.auth.domain.dto;
+package com.onefool.common.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class LoginDto {
 
-    private String username;
+    private String account;
 
     private String password;
 }

@@ -1,7 +1,8 @@
-package com.onefool.auth.mapper;
+package com.onefool.common.mapper;
 
-import com.onefool.auth.domain.entry.UmsRole;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.onefool.common.domain.entry.UmsRole;
 
 /**
 * @author Onefool

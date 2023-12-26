@@ -1,8 +1,11 @@
-package com.onefool.auth.mapper;
+package com.onefool.common.mapper;
+
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.onefool.auth.domain.entry.UmsSysUser;
+import com.onefool.common.domain.entry.UmsSysUser;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
 * @author Onefool
@@ -10,8 +13,10 @@ import com.onefool.auth.domain.entry.UmsSysUser;
 * @createDate 2023-12-24 10:41:33
 * @Entity .com.onefool.auth.entry.UmsSysUser
 */
+@Mapper
 public interface UmsSysUserMapper extends BaseMapper<UmsSysUser> {
 
+    UmsSysUser selectSysUserAndRole(@Param("accountType") int accountType, @Param("account") String account);
 }
 
 
