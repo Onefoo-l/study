@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8745ca49-5763-41d2-8809-2b710a62fc4e" name="Changes" comment="编写token工具类，security身份验证管理器，UserDetails类，流程进入到loadUserByUsername业务逻辑编写。移动service,mapper,domain模块到common模块中，方便调用">
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/constans/CacheConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/redis/FastJson2JsonRedisSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/redis/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/utils/RedisCacheUtil.java" afterDir="false" />
+    <list default="true" id="8745ca49-5763-41d2-8809-2b710a62fc4e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/44f03167-6724-42e9-84b1-0b2e8887ca0a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44f03167-6724-42e9-84b1-0b2e8887ca0a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/LoginDtoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/LoginDtoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/utils/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onefool_stater/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_stater/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/filter/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/filter/JwtFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,37 +55,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/myproject/onefool_study/onefool_study/onefool_common/src/main/java/com/onefool/common",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "ts.external.directory.path": "D:\\IDEA2023.1\\IntelliJ IDEA 2023.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/myproject/onefool_study/onefool_study/onefool_common/src/main/java/com/onefool/common&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\IDEA2023.1\\IntelliJ IDEA 2023.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -153,7 +149,8 @@
       <workItem from="1703378837119" duration="2211000" />
       <workItem from="1703381064609" duration="78000" />
       <workItem from="1703381171628" duration="1816000" />
-      <workItem from="1703383030866" duration="35386000" />
+      <workItem from="1703383030866" duration="38336000" />
+      <workItem from="1703554377986" duration="700000" />
     </task>
     <task id="LOCAL-00001" summary="初始化模块">
       <option name="closed" value="true" />
@@ -179,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703548831663</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="后端编写redis配置类，redis工具类，刷新token，对token进行逻辑处理，前端添加token的路由，">
+      <option name="closed" value="true" />
+      <created>1703554098371</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703554098371</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +205,8 @@
     <MESSAGE value="初始化模块" />
     <MESSAGE value="编写前端登录代码，配置security,mybatisPlus模块" />
     <MESSAGE value="编写token工具类，security身份验证管理器，UserDetails类，流程进入到loadUserByUsername业务逻辑编写。移动service,mapper,domain模块到common模块中，方便调用" />
-    <option name="LAST_COMMIT_MESSAGE" value="编写token工具类，security身份验证管理器，UserDetails类，流程进入到loadUserByUsername业务逻辑编写。移动service,mapper,domain模块到common模块中，方便调用" />
+    <MESSAGE value="后端编写redis配置类，redis工具类，刷新token，对token进行逻辑处理，前端添加token的路由，" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端编写redis配置类，redis工具类，刷新token，对token进行逻辑处理，前端添加token的路由，" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

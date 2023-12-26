@@ -1,13 +1,18 @@
 package com.onefool.support.config.filter;
 
+import cn.hutool.core.util.ObjectUtil;
+import com.onefool.common.domain.vo.LoginUserVo;
 import com.onefool.common.utils.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -27,6 +32,15 @@ public class JwtFilter extends OncePerRequestFilter {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtFilter.class);
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        jwtUtil.getToken(request);
+        LOGGER.info("进入doFilterInternal====>");
+        LoginUserVo loginUserVo = (LoginUserVo) jwtUtil.getToken(request);
+        if (ObjectUtil.isNotNull(loginUserVo)){
+            var userPassToken = new UsernamePasswordAuthenticationToken(loginUserVo.getUsername(),
+                    null,
+                    loginUserVo.getAuthorities());
+            SecurityContextHolder.getContext().setAuthentication(userPassToken);
+        }
+        LOGGER.info("放行jwt过滤器=========>");
+        filterChain.doFilter(request,response);
     }
 }

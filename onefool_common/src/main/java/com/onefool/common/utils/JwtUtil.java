@@ -28,30 +28,34 @@ public class JwtUtil {
 
     @Autowired
     private RedisCacheUtil redisCacheUtil;
+
     /**
      * 生成token
+     *
      * @param loginUserVo
      * @return
      */
-    public  String createToken(LoginUserVo loginUserVo){
+    public String createToken(LoginUserVo loginUserVo) {
         String token = IdUtil.simpleUUID();
         loginUserVo.setToken(token);
+        loginUserVo.setTime(System.currentTimeMillis());
         var map = new HashMap<String, Object>();
-        map.put("token",token);
+        map.put("token", token);
         //缓存到redis中
         refreshToken(loginUserVo);
         return Jwts.builder()
                 .setClaims(map)
-                .signWith(SignatureAlgorithm.HS512,secret)
+                .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
     }
 
     /**
      * 解析token
+     *
      * @param token
      * @return
      */
-    public Claims parseToken(String token){
+    public Claims parseToken(String token) {
         //解析token
         return Jwts.parser()
                 .setSigningKey(secret)
@@ -59,9 +63,16 @@ public class JwtUtil {
                 .getBody();
     }
 
+    /**
+     * 获取token
+     *
+     * @param request
+     * @return
+     */
     public Object getToken(HttpServletRequest request) {
         String onefoolToken = request.getHeader("onefoolToken");
-        if (StringUtils.isEmpty(onefoolToken)) throw new CustomizeException(StatusCode.FAILURE.code(),"请求头中获取token为空!!");
+        if (StringUtils.isEmpty(onefoolToken))
+            throw new CustomizeException(StatusCode.FAILURE.code(), "请求头中获取token为空!!");
         Claims claims = parseToken(onefoolToken);
         String token = (String) claims.get("token");
         LoginUserVo loginUserVo = redisCacheUtil.getCacheObject(CacheConstants.LOGIN_USER_KEY + token);
@@ -70,14 +81,22 @@ public class JwtUtil {
         long currentTime = System.currentTimeMillis();
         //是否相差20分钟
         long mills = currentTime / 1000 / 60 - time / 1000 / 60;
-        if (mills >= 20){
+        if (mills >= 20) {
             refreshToken(loginUserVo);
         }
-        return null;
+        return loginUserVo;
     }
 
-    public void refreshToken(LoginUserVo loginUserVo){
-        redisCacheUtil.setCacheObject(CacheConstants.LOGIN_USER_KEY + loginUserVo.getToken(),loginUserVo,30, TimeUnit.MINUTES);
+    /**
+     * 刷新token
+     *
+     * @param loginUserVo
+     */
+    public void refreshToken(LoginUserVo loginUserVo) {
+        redisCacheUtil.setCacheObject(CacheConstants.LOGIN_USER_KEY + loginUserVo.getToken(),
+                loginUserVo,
+                30,
+                TimeUnit.MINUTES);
 
     }
 }
