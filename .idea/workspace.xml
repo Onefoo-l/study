@@ -4,12 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8745ca49-5763-41d2-8809-2b710a62fc4e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/44f03167-6724-42e9-84b1-0b2e8887ca0a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44f03167-6724-42e9-84b1-0b2e8887ca0a.xml" afterDir="false" />
+    <list default="true" id="8745ca49-5763-41d2-8809-2b710a62fc4e" name="Changes" comment="编写Jwt过滤器，把他放到用户名密码身份验证过滤器前面去执行">
+      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/vo/RouterVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/utils/OnefoolSecurityUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_sys_user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onefool_sys_user/src/main/java/com/onefool/sysuser/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_admin_page/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_admin_page/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_admin_page/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_admin_page/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/entry/UmsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/entry/UmsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/entry/UmsSysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/entry/UmsSysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/vo/LoginUserVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/domain/vo/LoginUserVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/mapper/UmsRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/mapper/UmsRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/UmsMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/UmsMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/UmsMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/UmsMenuServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_common/src/main/resources/mapper/UmsRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_common/src/main/resources/mapper/UmsRoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_stater/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_stater/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onefool_support/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_support/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/filter/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/onefool_support/src/main/java/com/onefool/support/config/filter/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +165,10 @@
       <workItem from="1703381064609" duration="78000" />
       <workItem from="1703381171628" duration="1816000" />
       <workItem from="1703383030866" duration="38336000" />
-      <workItem from="1703554377986" duration="700000" />
+      <workItem from="1703554377986" duration="1114000" />
+      <workItem from="1703588790387" duration="65000" />
+      <workItem from="1703588888708" duration="6980000" />
+      <workItem from="1704752755702" duration="14253000" />
     </task>
     <task id="LOCAL-00001" summary="初始化模块">
       <option name="closed" value="true" />
@@ -184,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703554098371</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="编写Jwt过滤器，把他放到用户名密码身份验证过滤器前面去执行">
+      <option name="closed" value="true" />
+      <created>1703588738849</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703588738849</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,17 +232,7 @@
     <MESSAGE value="编写前端登录代码，配置security,mybatisPlus模块" />
     <MESSAGE value="编写token工具类，security身份验证管理器，UserDetails类，流程进入到loadUserByUsername业务逻辑编写。移动service,mapper,domain模块到common模块中，方便调用" />
     <MESSAGE value="后端编写redis配置类，redis工具类，刷新token，对token进行逻辑处理，前端添加token的路由，" />
-    <option name="LAST_COMMIT_MESSAGE" value="后端编写redis配置类，redis工具类，刷新token，对token进行逻辑处理，前端添加token的路由，" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/onefool_common/src/main/java/com/onefool/common/service/impl/LoginUserVoDetails.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="编写Jwt过滤器，把他放到用户名密码身份验证过滤器前面去执行" />
+    <option name="LAST_COMMIT_MESSAGE" value="编写Jwt过滤器，把他放到用户名密码身份验证过滤器前面去执行" />
   </component>
 </project>

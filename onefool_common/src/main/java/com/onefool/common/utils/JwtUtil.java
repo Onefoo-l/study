@@ -10,9 +10,13 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -23,6 +27,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 public class JwtUtil {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(JwtUtil.class);
 
     private static final String secret = "qwrwqafasdgsdfgadfxxxx";
 
@@ -70,9 +76,9 @@ public class JwtUtil {
      * @return
      */
     public Object getToken(HttpServletRequest request) {
-        String onefoolToken = request.getHeader("onefoolToken");
-        if (StringUtils.isEmpty(onefoolToken))
-            throw new CustomizeException(StatusCode.FAILURE.code(), "请求头中获取token为空!!");
+        String onefoolToken = request.getHeader("Onefool-Authorization");
+        LOGGER.info("进入getToken方法，从请求里面获取onefoolToken值===>{}",onefoolToken);
+        if (StringUtils.isEmpty(onefoolToken)) return null;
         Claims claims = parseToken(onefoolToken);
         String token = (String) claims.get("token");
         LoginUserVo loginUserVo = redisCacheUtil.getCacheObject(CacheConstants.LOGIN_USER_KEY + token);

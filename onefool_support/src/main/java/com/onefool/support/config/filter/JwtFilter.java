@@ -34,13 +34,15 @@ public class JwtFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         LOGGER.info("进入doFilterInternal====>");
         LoginUserVo loginUserVo = (LoginUserVo) jwtUtil.getToken(request);
+        LOGGER.info("获取loginUserVo值====>{}",loginUserVo);
         if (ObjectUtil.isNotNull(loginUserVo)){
-            var userPassToken = new UsernamePasswordAuthenticationToken(loginUserVo.getUsername(),
+            var userPassToken = new UsernamePasswordAuthenticationToken(loginUserVo,
                     null,
                     loginUserVo.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(userPassToken);
         }
         LOGGER.info("放行jwt过滤器=========>");
+        //有没有登录我都放行，没有登录我可以进行登录，有登录我可以通过token进行鉴权
         filterChain.doFilter(request,response);
     }
 }

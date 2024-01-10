@@ -15,14 +15,16 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <auth.version>1.0.0</auth.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.onefool</groupId>
             <artifactId>onefool_auth</artifactId>
-            <version>${auth.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.onefool</groupId>
+            <artifactId>onefool_sys_user</artifactId>
         </dependency>
 
     </dependencies>

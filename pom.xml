@@ -13,6 +13,7 @@
         <module>onefool_stater</module>
         <module>onefool_support</module>
         <module>onefool_auth</module>
+        <module>onefool_sys_user</module>
     </modules>
 
     <properties>
@@ -33,6 +34,10 @@
         <redis.version>3.1.5</redis.version>
         <fastjson2.version>2.0.39</fastjson2.version>
         <knife4j_spring.version>3.0.3</knife4j_spring.version>
+        <auth.version>1.0.0</auth.version>
+        <user.version>1.0.0</user.version>
+        <support.version>1.0.0</support.version>
+
     </properties>
 
     <dependencyManagement>
@@ -120,6 +125,21 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.onefool</groupId>
+                <artifactId>onefool_auth</artifactId>
+                <version>${auth.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.onefool</groupId>
+                <artifactId>onefool_sys_user</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.onefool</groupId>
+                <artifactId>onefool_support</artifactId>
+                <version>${support.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

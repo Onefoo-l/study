@@ -29,7 +29,7 @@ public class LoginUserVo implements UserDetails {
 
     private String token;
     //用户信息
-    private UmsSysUser umsSysUser;
+    private UmsSysUser umsSysUser = new UmsSysUser();
 
 
     /**

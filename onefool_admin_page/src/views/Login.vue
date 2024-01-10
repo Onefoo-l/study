@@ -54,6 +54,8 @@
 import { ref } from 'vue'
 //导入login方法
 import {login} from '@/api/auth/index.js'
+//导入searchSelf犯法
+import {searchSelf} from '@/api/user/index.js'
 //引入token
 import { setToken } from '@/utils/utils/index.js'
 //声明表单绑定值
@@ -70,8 +72,14 @@ function handleLogin(){
         console.log("登录====>",res);
         //判断是否成功
         if(res.data.code == 20000){
+            console.log("登录成功====>准备存储token",res.data.code);
             //将token存储到redis中
-            setToken("onefoolToken",res.data.token);
+            setToken("onefoolToken",res.data.data);
+            console.log("token值",res.data.data);
+            //查询用户的权限和菜单【设置页面路由实现动态路由】
+            searchSelf().then(res => {
+                console.log("res ==>",res)
+            })
         }
     })
 };

@@ -3,7 +3,6 @@
 import axios from 'axios';
 import router from '@/router/index.js'
 import {getToken} from '@/utils/utils/index.js'
-let token = "";
 //创建axios
 const request = axios.create({
     //根请求地址
@@ -20,7 +19,7 @@ request.interceptors.request.use((config) => {
 
     //在请求头添加token，判断是否需要发送token
     if (getToken("onefoolToken")) {
-         config.headers['Onefool.Authorization'] = getToken("onefoolToken");      
+         config.headers['Onefool-Authorization'] = getToken("onefoolToken");      
     }
     return config;
 },(error) => {

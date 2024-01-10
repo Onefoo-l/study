@@ -3,6 +3,9 @@ package com.onefool.common.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.onefool.common.domain.entry.UmsRole;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
 * @author Onefool
@@ -12,6 +15,7 @@ import com.onefool.common.domain.entry.UmsRole;
 */
 public interface UmsRoleMapper extends BaseMapper<UmsRole> {
 
+    List<Long> selectRoleByUserId(@Param("userId") Long userId);
 }
 
 

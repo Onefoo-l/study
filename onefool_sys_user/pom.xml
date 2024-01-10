@@ -8,26 +8,19 @@
         <artifactId>onefool_study</artifactId>
         <version>1.0.0</version>
     </parent>
-    <description>核心支持模块</description>
-    <artifactId>onefool_support</artifactId>
-    <version>1.0.0</version>
+
+    <artifactId>onefool_sys_user</artifactId>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <common.verison>1.0.0</common.verison>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.onefool</groupId>
-            <artifactId>onefool_common</artifactId>
-            <version>${common.verison}</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <artifactId>onefool_support</artifactId>
         </dependency>
     </dependencies>
-
-
 </project>

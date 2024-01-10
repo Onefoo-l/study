@@ -24,4 +24,10 @@
         remark,creator,updater,
         create_time,update_time
     </sql>
+
+    <select id="selectRoleByUserId" resultType="java.lang.Long">
+        select  usur.role_id
+            from ums_sys_user_role usur
+         join ums_sys_user usu on usu.id = usur.user_id and usu.id = #{userId}
+    </select>
 </mapper>
