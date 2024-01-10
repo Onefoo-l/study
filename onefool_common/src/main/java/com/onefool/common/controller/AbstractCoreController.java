@@ -32,10 +32,15 @@ public abstract class AbstractCoreController<T> implements ICoreController<T> {
     //调用方的service
     protected IService<T> coreService;
 
+    public AbstractCoreController(){}
+
     public AbstractCoreController(IService<T> coreService) {
         this.coreService = coreService;
     }
 
+    public void setCoreService(IService<T> coreService){
+        this.coreService = coreService;
+    }
 
     /**
      * 批量删除记录
