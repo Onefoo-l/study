@@ -36,6 +36,20 @@ public abstract class AbstractCoreController<T> implements ICoreController<T> {
         this.coreService = coreService;
     }
 
+
+    /**
+     * 批量删除记录
+     * @param ids
+     * @return
+     */
+    @PostMapping("/deleteIds")
+    @Override
+    public Result deleteByIds(List<Serializable> ids) {
+        boolean flag = coreService.removeBatchByIds(ids);
+        return !flag ? Result.error() : Result.ok();
+    }
+
+
     /**
      * 删除记录
      *

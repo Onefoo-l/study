@@ -5,6 +5,7 @@ package com.onefool.common.controller;
 import com.onefool.common.pojo.Result;
 
 import java.io.Serializable;
+import java.util.List;
 
 /***
  * 描述
@@ -19,4 +20,6 @@ public interface IDeleteController<T> {
      * @return
      */
     Result deleteById(Serializable id);
+
+    Result deleteByIds(List<Serializable> ids);
 }
